@@ -1,0 +1,119 @@
+body
+{
+    background-color: maroon;
+}
+
+.head
+{
+    display: flex;
+    justify-content: space-between;
+}
+button 
+{
+    width: 150px;
+    height: 70px;
+    font-size: 20px;
+}
+.underNumber
+{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.guessNumber
+{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.number 
+{
+    display: flex;
+    justify-content: center;
+}
+.question
+{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 650px;
+    top: 62px;
+    font-size: 50px;
+}
+hr
+{
+    height: 5px;
+    background-color: white;
+}
+.look
+{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.game
+{
+    width: 200px;
+    height: 90px;
+    background: none;
+    font-size: 50px;
+    color: white;
+    border: 3px solid white;
+}
+.check
+{
+    width: 120px;
+    height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.mid
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hundred
+{
+    display: flex;
+    align-items: center;
+    color:white;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.last
+{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 200px;
+}
+.result
+{
+    color: white;
+    font-size: 40px;
+}
+.looks
+{
+    line-height: 70px;
+}
+.target
+{
+    display: flex;
+    align-items: center;
+    
+}
+.text
+{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
