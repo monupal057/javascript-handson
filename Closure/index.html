@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Closure</title>
+</head>
+<body>
+    <h1>**Closure**</h1>
+    <h2 class="question">Q-1.</h2>
+    <pre>
+        function counter(){
+            var counter=0;
+        
+            function IncreaseCounter(){
+                return counter+=1;
+            };
+            return IncreaseCounter;
+        }
+        var counter=counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+    </pre>
+    <p>ANS:- <span class="one">1,2,3,4</span></p>
+    <h2 class="question">Q-2.</h2>
+    <pre>
+        let count=0;
+        (function(){
+           if(count===0){
+               let count=1;
+               console.log(count);
+               }
+               console.log(count);
+        })();
+    </pre>
+    <p>ANS:- <span class="one">1,0</span></p>
+
+    <h2 class="question">Q-3.</h2>
+    <pre>
+        for(var i=0;i<3;i++){
+            setTimeout(function log(){
+                console.log(i);
+            },1000);
+        }
+     </pre>
+     <p>ANS:- <span class="one">3,3,3</span></p>
+     <h2 class="question">Q-4.Write a code to calculate area of rectangle using inner function .
+        In this case outer function should accept parameter length and inner function should
+         accept parameter breadth?</h2>
+  <p>ANS:- <span class="one">Area of Rectangle:200</span>
+    <pre>
+        function outer(L){
+            function inner(B){
+                console.log(`Area of Rectagle:${L*B}`);
+            }
+            inner(10);
+        }
+        outer(20);
+    </pre>
+</p>
+
+<h2 class="question">Q-5.Take a variable in outer function and create an inner function to 
+     increase the counter every time it is called</h2>
+     <p>ANS:- <span class="one">1,2,3,4 this method Increase value every time.</span>
+        <pre>
+            function outer(){
+                var i=0;
+                function inner(){
+                    return i+=1;
+                }
+                return inner;
+            }
+            
+            let outer1=outer();
+            console.log(outer1());
+            console.log(outer1());
+            console.log(outer1());
+            console.log(outer1());
+        </pre>
+    </p>
+
+    <h2 class="question">Q-6.</h2>
+    <pre>
+        var a=12;
+        (function (){
+             alert(a);
+        })();
+    </pre>
+    <p>ANS:- <span class="one">12---Show the answer in html page ,pop up formate.</span></p>
+
+    <h2 class="question">Q-7.</h2>
+    <pre>
+        var a=10;
+        var x=(function (){
+            var a=12;
+            return function (){
+              alert(a);
+           }
+         })();
+         x();
+    </pre>
+    <p>ANS:- <span class="one">12 is show in the html page because it is a alert function and after print--10.</span> </p>
+    <h2 class="question">Q-8.</h2>
+    <pre>
+        var globalVar="xyz";
+
+(function outerFunc(outerArg){
+    var outer="a";
+
+    (function innerFunc(innerArg){
+        var innerVar="b";
+
+
+        console.log(
+            "outerArg="+outerArg+"\n"+
+            "innerArg="+innerArg+"\n"+
+            "outerVar="+outerArg+"\n"+
+            "innerVar="+innerVar+"\n"+
+            "globalVar="+globalVar);
+    })(456);
+})(123);
+    </pre>
+    <p>ANS:- <span class="one">
+        <pre class="two">
+            outerArg=123
+            innerArg=456
+            outerVar=123
+            innerVar=b
+            globalVar=xyz
+        </pre>
+    </span> </p>
+</body>
+<script src="./script.js"></script>
+</html>
