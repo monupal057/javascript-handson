@@ -1,41 +1,32 @@
-let inp=document.querySelectorAll("input")
-let result=document.getElementById("result");
-
-let chanceVal=document.getElementById("text");
-let highscore=document.getElementById("text2");
-var text=100;
-let btn2=document.getElementById("btn2");
-let image=document.getElementById("question");
-
-let game=document.getElementById("game");
-
-image.innerHTML=inp[0].value;
-
-let randomNumber=parseInt(Math.random()*100)+1;
+let randomNumber = parseInt(Math.random() * 100 + 1);
 
 console.log(randomNumber);
+let guess = document.getElementById('guess')
+let inp = document.querySelectorAll('input');
+let btn = document.getElementById('check');
+let boxVal = document.getElementsByClassName("box");
 
- btn2.addEventListener("click",() => {
 
-    if(randomNumber>parseInt(inp[0].value))
-    {
-        result.innerHTML="You Are too Low ! 😜";
-        chanceVal.innerText=`Chance:${--text}`;
+let chance = 100;
+let chanceVal = document.getElementById('chance')
+let scoreVal = document.getElementById('score')
+
+btn.addEventListener('click', () => {
+    if (randomNumber > parseInt(inp[0].value)) {
+        guess.innerHTML = "Your guess is too low";
+        chanceVal.innerText = --chance;
+    } else if (randomNumber < parseInt(inp[0].value)) {
+        guess.innerHTML = "Your guess is high";
+        chanceVal.innerText = --chance;
+    } else {
+        guess.innerHTML = "🤩🤩Hurray! You won the game🤩🤩";
+        chanceVal.innerText = chance;
+        scoreVal.innerHTML = chance;
+        document.body.style.backgroundColor = `green`;
+        boxVal[0].innerHTML = randomNumber;
     }
-    else if(randomNumber<parseInt(inp[0].value))
-    {
-        result.innerHTML="You Are too High ! 😜";
-        chanceVal.innerText=`Chance:${--text}`;
-    }
-    else
-    {
-        result.innerHTML="You Won The Match ! ✌";
-        chanceVal.innerText=`Chance:${text}`;
-        chanceVal.style.fontSize="40px";
-        chanceVal.style.color="green";
-        highscore.innerText=`HighScore:${text}`;
-        highscore.style.fontSize="40px";
-        highscore.style.color="yellow";
-        image.innerText=game.value;
-    }
- })
+})
+
+function playAgain() {
+    document.location.reload(true);
+}
